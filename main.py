@@ -12,9 +12,9 @@ red = '\u001b[31m' # error
 reset = '\u001b[0m' # reset color to default
 
 
-
 with open('words.txt') as file:
     words = file.readlines()
+  
 # words contain newline characters at end
 actual_word = random.choice(words).upper()[0:5]
 guess_word = ""
@@ -44,7 +44,6 @@ def draw_box(x, y, text):
   t.pencolor(white)
   t.write(text, align="center", font=("Arial", 25, "bold"))
   
-pass
 
 
 def draw_board():
@@ -53,7 +52,6 @@ def draw_board():
       t.fillcolor(board[i][j][1]) # box color
       draw_box(-145 + 60*j, 175 - 60*i, board[i][j][0])
   t.update()
-pass
 
 
 def find_matches(guess, actual):
@@ -80,14 +78,12 @@ def find_matches(guess, actual):
 
     # count letter guess
     lgc[guess[i]] += 1         
-pass
 
 
 draw_board()
 
 while True:
   guess_word = input("GUESS A 5 LETTER WORD: ").upper()
-  
   if len(guess_word) != 5 or not guess_word.isalpha():
     print(red + "INVALID INPUT" + reset)
     continue
