@@ -45,7 +45,6 @@ def draw_box(x, y, text):
   t.write(text, align="center", font=("Arial", 25, "bold"))
   
 
-
 def draw_board():
   for i in range(6):
     for j in range(5):
@@ -58,7 +57,7 @@ def find_matches(guess, actual):
   lgc = {} # dictionary to count letter guesses
   
   for letter in actual:
-    lgc.update({letter: 0})
+    lgc.update({letter: 0}) # initialize dictionary with letters
 
   for i in range(5):
     if guess[i] not in actual: # wrong letter
@@ -79,6 +78,7 @@ def find_matches(guess, actual):
     # count letter guess
     lgc[guess[i]] += 1         
 
+#----------------------------
 
 draw_board()
 
