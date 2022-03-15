@@ -1,13 +1,9 @@
 import random
 
 
-with open('word_list.txt') as file:
-    words = file.readlines()
-# words contain newline characters at end
-actual_word = random.choice(words).upper()[0:5]
+words = open('words.txt').read().split("\n")
+actual_word = random.choice(words).upper()
 guess_word = ""
-
-
 
 
 green = '\u001b[42m' # letter is in right spot
@@ -16,7 +12,6 @@ black = '\u001b[40m' # letter does not exist in word
 red = '\u001b[31m' # error
 underline = '\u001b[4m'
 reset = '\u001b[0m' # reset color to default
-
 
 
 def show_matches(guess, actual):
@@ -52,8 +47,6 @@ pass
 # print("\t" + "* A LETTER WILL BE HIGHLIGHTED IN GREEN IF IT IS IN THE WORD AND IS ALSO IN THE RIGHT SPOT")
 # print("\t" + "* A LETTER WILL BE HIGHLIGHTED IN YELLOW IF IT IS IN THE WORD BUT IS NOT IN THE RIGHT SPOT")
 # print("\t" + "* A LETTER WILL BE HIGHLIGHTED IN BLACK IF IT IS NOT IN THE WORD AT ALL")
-
-
 # input("\n*** PRESS ENTER TO BEGIN ***")
 # print("\n")
 
