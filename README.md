@@ -8,4 +8,6 @@ Wordle game using Python turtle graphics (v2)
 * Green highlighting means that the letter is in the word and is in the right spot.
 
 
-![screenshot](screen.jpg)
+<img src="screen.png"
+     alt="screenshot"
+     style="float: left; margin-right: 10px;" />
