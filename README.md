@@ -1,5 +1,4 @@
 # Wordle by Ty'rese H. — March 2022
-Wordle game using console I/O (v1)
 
 Wordle game using Python turtle graphics (v2)
 
