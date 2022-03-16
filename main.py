@@ -8,20 +8,17 @@ white = "white" # empty
 green = "#7aa86a" # letter is in right spot
 yellow = "#c6b567" # letter exists but is in wrong spot
 gray = "#787c7f" # letter does not exist in word
-red = '\u001b[31m' # error
-reset = '\u001b[0m' # reset color to default
+red = '\u001b[31m' # error text
+reset = '\u001b[0m' # reset text color to default
 
 
-with open('words.txt') as file:
-    words = file.readlines()
-  
-# words contain newline characters at end
-actual_word = random.choice(words).upper()[0:5]
+words = open('words.txt').read().split("\n")
+actual_word = random.choice(words).upper()
 guess_word = ""
-tries = 0
+tries = 0 # also used to switch row after each try
 
 
-# 2d list of tuples
+# 6 by 5 2d list of tuples
 # each tuple formatted as: (letter, box_color)
 board = [[("", white) for j in range(5)] for i in range(6)]
 
@@ -40,7 +37,7 @@ def draw_box(x, y, text):
   t.up()
 
   # write letter
-  t.goto(x + 25, y - 45)
+  t.goto(x + 27, y - 46)
   t.pencolor(white)
   t.write(text, align="center", font=("Arial", 25, "bold"))
   
@@ -54,31 +51,33 @@ def draw_board():
 
 
 def find_matches(guess, actual):
-  lgc = {} # dictionary to count letter guesses
   
-  for letter in actual:
-    lgc.update({letter: 0}) # initialize dictionary with letters
-
-  for i in range(5):
-    if guess[i] not in actual: # wrong letter
-      board[tries][i] = (guess[i], gray)
-      continue
-      
-    # right letter but guessed too many times
-    if lgc[guess[i]] == actual.count(guess[i]):
-      board[tries][i] = (guess[i], gray)
-      continue
-      
-    # right letter in right spot
-    if i == actual.find(guess[i], i):
+  # handle duplicate letter guesses
+  lgc = {letter:0 for letter in actual} 
+  
+  for i in range(5): # first pass, prioritize greens
+    if guess[i] == actual[i]:
       board[tries][i] = (guess[i], green)
+      lgc[guess[i]] += 1 # count guess
+     
+ 
+  for i in range(5): # second pass
+    if guess[i] == actual[i]: # skip greens
+      continue
+    
+    elif guess[i] not in actual: # letter doesn't exist
+      board[tries][i] = (guess[i], gray)
+
+    # letter exists but guessed too many times
+    elif lgc[guess[i]] == actual.count(guess[i]):
+      board[tries][i] = (guess[i], gray)
+
     else: # right letter in wrong spot
       board[tries][i] = (guess[i], yellow)
+      lgc[guess[i]] += 1
+           
 
-    # count letter guess
-    lgc[guess[i]] += 1         
-
-#----------------------------
+#---------- GAME RUNS BELOW
 
 draw_board()
 
