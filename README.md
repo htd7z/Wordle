@@ -10,4 +10,6 @@ Wordle game using Python turtle graphics (v2)
 
 <img src="screen.png"
      alt="screenshot"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 10px;" 
+     width="720" 
+     height="405"/>
