@@ -24,11 +24,11 @@ _See documentation below under the screenshot._
 Turtle and ANSI colors are saved as strings.
 
 ```board``` is a two-dimensional list of tuples representing the boxes on the board.
-Each tuple contains the letter for the box and the background color for the box. _Example:_ ```("A", green)```.
+Each tuple contains the letter and the fill color for that box. _Example:_ ```("A", green)```.
 
 The default value for the tuples is ```("", white)```, meaning no letter has been guessed yet.
 
-The ```draw_box()``` function draws a box at ```x,y``` and fills it with current turtle fill color. It also writes ```text``` (a letter) in the center of the box. Filling in a box is the same thing as highlighting a letter.
+The ```draw_box()``` function draws a box at ```x,y``` and fills it with current turtle fill color. It also writes ```text``` (a letter) in the center of the box. For clarity, filling in a box is the same thing as highlighting a letter.
 
 
 The ```draw_board()``` function iterates through the tuples in ```board``` and draws the boxes in a grid format. It uses the tuples to get the right fill color and letter for the box.
@@ -36,15 +36,16 @@ The ```draw_board()``` function iterates through the tuples in ```board``` and d
 
 ### COLOR-CODING THE LETTERS IN A GUESS WORD
 The ```colorize()``` function determines the color of each box by looping through the letters in ```guess``` and comparing them to those in ```actual```.
-It directly modifies the tuples in ```board``` by changing their letters and colors.
+It directly modifies the tuples in ```board``` by changing their contained letters and colors.
 
 ```tries``` keeps track of how many guesses a user has made thus far. It is also used to determine which row in ```board``` the letters in ```guess``` will be placed in. _Example: If a user has made 2 guesses so far, row 2 will be filled in after the next guess is made._
 
-The algorithm to find matches is mostly trivial. Each letter in ```guess``` is compared to the corresponding letter from ```actual```. However, there are two edge cases involving duplicate letters that ```colorize()``` accounts for.
+The algorithm to highlight letters is mostly trivial. Each letter in ```guess``` is compared to the corresponding letter from ```actual```. However, there are two edge cases involving duplicate letters that ```colorize()``` accounts for.
 
 **(1) If a letter from ```guess``` is in ```actual``` but is in the wrong spot it would normally be highlighted in yellow. However, if the letter has been used in ```guess``` more times than it exists in ```actual```, it should be highlighted in gray/black. _Example: if the actual word is "TEASE" and the guessed word is "EREEN", there should only be two yellow "E"s, not three. The third "E" should be highlighted in gray/black (see screenshot below)_.**
 
-```lgc``` (letter guess counter) is a dictionary where each key is a letter in the actual word, and its value is the number of times that letter has been guessed thus far. It is used to highlight a letter from ```guess``` in gray/black if it is used more times than it exists in ```actual```. This prevents incorrect duplicate yellow highlights but does not address the second edge case.
+```lgc``` (letter guess counter) is a dictionary where each key is a letter in the actual word and its value is the number of times that letter has been guessed thus far. It is used to highlight a letter from ```guess``` in gray/black if it is used more times than it exists in ```actual```.
+
 
 **(2) If a letter from ```guess``` is in ```actual``` and is in the right spot it should be highlighted in green no matter what, even if it has been used too many times. _Example: if the actual word is "TEASE" and the guessed word is "EMCEE", there should only be one yellow "E", not two. The second "E" should be highlighted in gray/black. Though the last "E" is the third time that "E" is used, it should still be highlighted in green because it is in the right spot. If the guess is "GREEN" however, both "E"s should be highlighted in yellow see screenshot below)_.**
 
@@ -52,3 +53,8 @@ To account for this, green highlighting takes priority over yellow and gray/blac
 
 ### GAME FUNCTIONALITY
 ```while True``` is the main loop that runs the game.
+
+
+Correct output for edge cases:
+
+![screen2](https://user-images.githubusercontent.com/96847125/158745691-9bfed4a1-82a9-41b9-96bc-d027fe14d733.png)
