@@ -9,7 +9,7 @@
 * Yellow highlighting means that the letter is in the word, but in the wrong spot.
 * Green highlighting means that the letter is in the word and is in the right spot.
 
-_See documentation below under the screenshot._
+_See documentation and Replit file below._
 
 <img src="screen.png"
      alt="screenshot"
@@ -57,6 +57,8 @@ To account for this, green highlighting takes priority over yellow and gray/blac
 ### GAME FUNCTIONALITY
 ```while True``` is the main loop that runs the game.
 
+**[Click here to test this game in replit.](https://replit.com/@ty-rese/Wordle-key#main.py)**
+**If you find any bugs, please email me at htd.7z@my.com**
 
 Correct output for edge cases:
 
@@ -65,3 +67,4 @@ Correct output for edge cases:
      style="float: left; margin-right: 10px;" 
      width="429" 
      height="403"/>
+
