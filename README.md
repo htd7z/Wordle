@@ -1,6 +1,7 @@
 # Wordle by Ty'rese H. — March 2022
 
 \[v1] Wordle game using console I/O only (not shown, needs fixing).
+
 \[v2] Wordle game using console I/O and Python turtle graphics.
 
 * Use the console to guess a 5-letter word within 6 tries.
