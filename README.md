@@ -16,5 +16,5 @@ _See documentation below under the screenshot._
      height="305"/>
      
 
-
+### ORGANIZATION
 A 2d-list is used to store tuples containing (1) the letter for the box (2) the background color for the box. The draw_box function draws the box, fills it with the right background color, and writes the proper letter on top of it.
