@@ -24,7 +24,7 @@ Turtle and ANSI colors are saved as strings.
 ```board``` is a 6 two-dimensional list storing tuples. 
 Each tuple contains (1) the letter for the box (2) the background color for the box. 
 
-Ex: ```("A", green)``` 
+Example: ```("A", green)``` 
 ```board``` is initialized using list comprehension where each tuple is ```("", white)```.
 
 The ```draw_box()``` function draws a box at ```x,y``` and fills it with current turtle fill color.
@@ -37,9 +37,10 @@ It uses the tuples to get right fill color and letter for the box.
 The ```find_matches()``` function determines the color of each box based on the matches that are found.
 It directly modifies the tuples in ```board```.
 
-```tries``` keeps track of how many tries a user has made thus far.
+```tries``` keeps track of how many tries a user has made thus far. 
+
 It is also used to determine which row in ```board``` the letters from ```guess``` will be placed in.
-Ex: If a user has made 2 guess so far, row 2 will be filled in afer the next guess is made.
+Example: If a user has made 2 guess so far, row 2 will be filled in afer the next guess is made.
 
 The algorithm to find matches seems trivial until duplicate letters are involved.
 
