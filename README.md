@@ -34,6 +34,7 @@ The ```draw_box()``` function draws a box at ```x,y``` and fills it with current
 The ```draw_board()``` function iterates through the tuples in ```board``` and draws the boxes in a grid format. It uses the tuples to get the right fill color and letter for the box.
 
 
+
 ### COLOR-CODING THE LETTERS IN A GUESS WORD
 The ```colorize()``` function determines the color of each box by looping through the letters in ```guess``` and comparing them to those in ```actual```.
 It directly modifies the tuples in ```board``` by changing their contained letters and colors.
@@ -50,6 +51,8 @@ The algorithm to highlight letters is mostly trivial. Each letter in ```guess```
 **(2) If a letter from ```guess``` is in ```actual``` and is in the right spot it should be highlighted in green no matter what, even if it has been used too many times. _Example: if the actual word is "TEASE" and the guessed word is "EMCEE", there should only be one yellow "E", not two. The second "E" should be highlighted in gray/black. Though the last "E" is the third time that "E" is used, it should still be highlighted in green because it is in the right spot. If the guess is "GREEN" however, both "E"s should be highlighted in yellow (see screenshot below)_.**
 
 To account for this, green highlighting takes priority over yellow and gray/black highlighting. The first ```for i in range(5)``` loop only does green highlighting and counts letter guesses. The second ```for i in range(5)``` skips over green highlighting completely, does yellow and gray/black highlighting, and counts letter guesses.
+
+
 
 ### GAME FUNCTIONALITY
 ```while True``` is the main loop that runs the game.
