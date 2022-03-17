@@ -57,4 +57,8 @@ To account for this, green highlighting takes priority over yellow and gray/blac
 
 Correct output for edge cases:
 
-![screen2](https://user-images.githubusercontent.com/96847125/158745691-9bfed4a1-82a9-41b9-96bc-d027fe14d733.png)
+<img src="screen2.png"
+     alt="screenshot2"
+     style="float: left; margin-right: 10px;" 
+     width="429" 
+     height="403"/>
