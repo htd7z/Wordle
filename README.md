@@ -29,8 +29,7 @@ Each tuple contains (1) the letter for the box (2) the background color for the 
 The ```draw_box()``` function draws a box at ```x,y``` and fills it with current turtle fill color.
 It also writes ```text``` in the center of the box.
 
-The ```draw_board()``` function iterates through the tuples in ```board``` and draws the boxes in a grid format.
-->It uses the tuples to get right fill color and letter for the box. 
+The ```draw_board()``` function iterates through the tuples in ```board``` and draws the boxes in a grid format. It uses the tuples to get right fill color and letter for the box. 
 
 ### COLOR-CODING THE LETTERS IN A GUESS WORD
 The ```find_matches()``` function determines the color of each box based on the matches that are found.
