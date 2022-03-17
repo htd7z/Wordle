@@ -19,8 +19,13 @@ _See documentation below under the screenshot._
 ### DATA ORGANIZATION AND VISUALS
 Turtle and ANSI colors are saved as string variables.
 
-```board``` is a 6 by 5 two-dimensional list storing tuples. 
+_board_ is a 6 two-dimensional list storing tuples. 
 Each tuple contains (1) the letter for the box (2) the background color for the box. Ex: ("A", green).
 _board_ is initialized using list comprehension where each tuple is ("", white).
 
-The draw_box function draws the box, fills it with the right background color, and writes the proper letter on top of it.
+The _draw_box()_ function draws a box at _x, y_, fills it with current turtle fill color, and writes _text_ in the center of it.
+
+The _draw_board()_ function uses nested-loops to iterate through the tuples in _board_ and draw the boxes in a grid format.
+It also uses the tuples to change the fill color for each box. 
+
+### COLOR-CODING THE LETTERS IN A GUESS WORD.
