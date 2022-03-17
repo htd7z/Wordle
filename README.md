@@ -23,6 +23,7 @@ Turtle and ANSI colors are saved as strings.
 
 ```board``` is a 6 two-dimensional list storing tuples. 
 Each tuple contains (1) the letter for the box (2) the background color for the box. 
+
 Ex: ```("A", green)``` 
 ```board``` is initialized using list comprehension where each tuple is ```("", white)```.
 
@@ -33,7 +34,7 @@ The ```draw_board()``` function iterates through the tuples in ```board``` and d
 It uses the tuples to get right fill color and letter for the box. 
 
 ### COLOR-CODING THE LETTERS IN A GUESS WORD
-The ```find_matches()``` function determines the color each box should be based on the matches that are found.
+The ```find_matches()``` function determines the color of each box based on the matches that are found.
 It directly modifies the tuples in ```board```.
 
 ```tries``` keeps track of how many tries a user has made thus far.
