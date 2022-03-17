@@ -36,9 +36,6 @@ It uses the tuples to get right fill color and letter for the box.
 The ```find_matches()``` function determines the color of each box based on the matches that are found.
 It directly modifies the tuples in ```board```.
 
-```tries``` keeps track of how many tries a user has made thus far. 
-
-It is also used to determine which row in ```board``` the letters from ```guess``` will be placed in. Example: If a user has made 2 guess so far, row 2 will be filled in afer the next guess is made.
+```tries``` keeps track of how many tries a user has made thus far. It is also used to determine which row in ```board``` the letters from ```guess``` will be placed in. Example: If a user has made 2 guess so far, row 2 will be filled in afer the next guess is made.
 
 The algorithm to find matches seems trivial until duplicate letters are involved.
-
