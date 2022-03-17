@@ -7,7 +7,7 @@ Wordle game using Python turtle graphics (v2)
 * Yellow highlighting means that the letter is in the word, but in the wrong spot.
 * Green highlighting means that the letter is in the word and is in the right spot.
 
-_See documentation below under the screenshot.
+_See documentation below under the screenshot._
 
 <img src="screen.png"
      alt="screenshot"
