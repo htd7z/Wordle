@@ -16,5 +16,11 @@ _See documentation below under the screenshot._
      height="305"/>
      
 
-### ORGANIZATION
-A 2d-list is used to store tuples containing (1) the letter for the box (2) the background color for the box. The draw_box function draws the box, fills it with the right background color, and writes the proper letter on top of it.
+### DATA ORGANIZATION AND VISUALS
+Turtle and ANSI colors are saved as string variables.
+
+```board``` is a 6 by 5 two-dimensional list storing tuples. 
+Each tuple contains (1) the letter for the box (2) the background color for the box. Ex: ("A", green).
+_board_ is initialized using list comprehension where each tuple is ("", white).
+
+The draw_box function draws the box, fills it with the right background color, and writes the proper letter on top of it.
