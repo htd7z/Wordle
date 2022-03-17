@@ -48,16 +48,18 @@ The algorithm to highlight letters is mostly trivial. Each letter in ```guess```
 ```lgc``` (letter guess counter) is a dictionary where each key is a letter in the actual word and its value is the number of times that letter has been guessed thus far. It is used to highlight a letter from ```guess``` in gray/black if it is used more times than it exists in ```actual```.
 
 
-**(2) If a letter from ```guess``` is in ```actual``` and is in the right spot it should be highlighted in green no matter what, even if it has been used too many times. _Example: if the actual word is "TEASE" and the guessed word is "EMCEE", there should only be one yellow "E", not two. The second "E" should be highlighted in gray/black. Though the last "E" is the third time that "E" is used, it should still be highlighted in green because it is in the right spot. If the guess is "GREEN" however, both "E"s should be highlighted in yellow (see screenshot below)_.**
+**(2) If a letter from ```guess``` is in ```actual``` and is in the right spot it should be highlighted in green no matter what, even if it has been used too many times. _Example: if the actual word is "TEASE" and the guessed word is "EMCEE", there should only be one yellow "E", not two. The second "E" should be highlighted in gray/black. Though the last "E" is the third time that "E" is used, it should still be highlighted in green because it is in the right spot (see screenshot below)_.**
 
 To account for this, green highlighting takes priority over yellow and gray/black highlighting. The first ```for i in range(5)``` loop only does green highlighting and counts letter guesses. The second ```for i in range(5)``` skips over green highlighting completely, does yellow and gray/black highlighting, and counts letter guesses.
 
 
 
-### GAME FUNCTIONALITY
+### MAIN GAME CONTROL
 ```while True``` is the main loop that runs the game.
 
-**[Click here to test this game in replit.](https://replit.com/@ty-rese/Wordle-key#main.py)**
+### RUN IT YOURSELF
+
+**[Click here to test this game on replit.](https://replit.com/@ty-rese/Wordle-key#main.py)**
 **If you find any bugs, please email me at htd.7z@my.com**
 
 Correct output for edge cases:
