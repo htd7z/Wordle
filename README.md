@@ -34,10 +34,18 @@ The ```draw_board()``` function iterates through the tuples in ```board``` and d
 
 ### COLOR-CODING THE LETTERS IN A GUESS WORD
 The ```find_matches()``` function determines the color of each box by looping through the letters in ```guess``` and comparing them to those in ```actual```.
-It directly modifies the tuples in ```board```.
+It directly modifies the tuples in ```board``` by changing their letters and colors.
 
-```tries``` keeps track of how many tries a user has made thus far. It is also used to determine which row in ```board``` the letters from ```guess``` will be placed in. _Example: If a user has made 2 guess so far, row 2 will be filled in afer the next guess is made._
+```tries``` keeps track of how many tries a user has made thus far. It is also used to determine which row in ```board``` the letters in ```guess``` will be placed in. _Example: If a user has made 2 guess so far, row 2 will be filled in after the next guess is made._
 
-The algorithm to find matches seems trivial until duplicate letters and letter ordering come into play. ==If a letter from ```guess_word``` is in ```actual_word``` but has been used too many times already, it should be highlighted in gray/black. _Example: if the actual word is "TEASE" and the guessed word is "EMCEE", there should only be 1 yellow "E", not 2. The second "E" should be highlighted in gray/black (see screenshot below)_==.
+The algorithm to find matches is mostly trivial. Each letter in ```guess``` is compared to the corresponding letter from ```actual```. However, there are two edge cases involving duplicate letters that ```find_matches()``` accounts for.
 
-```lgc``` (letter guess counter) is a dictionary where each key is a letter in the actual word, and its value is the number of times that letter has been guessed.  shown as gray/black. 
+**(1) If a letter from ```guess``` is in ```actual``` but is in the wrong spot it would normally be highlighted in yellow. However, if the letter has been used in ```guess``` more times than it exists in ```actual```, it should be highlighted in gray/black. _Example: if the actual word is "TEASE" and the guessed word is "EREEN", there should only be 2 yellow "E"s, not 3. The third "E" should be highlighted in gray/black (see screenshot below)_.**
+
+```lgc``` (letter guess counter) is a dictionary where each key is a letter in the actual word, and its value is the number of times that letter has been guessed thus far. It is used to highlight a letter from ```guess``` in gray/black if it is used more times than it exists in ```actual```. This prevents incorrect duplicate yellow highlights but does not address the second edge case.
+
+**(2) If a letter from ```guess``` is in ```actual``` and is in the right spot it should be highlighted in green no matter what, even if it has been used too many times. _Example: if the actual word is "TEASE" and the guessed word is "EMCEE", there should only be 1 yellow "E", not 2. The second "E" should be highlighted in gray/black. Though the last "E" is the third time that "E" is used, it should still be highlighted in green because it is in the right spot. (see screenshot below)_.**
+
+To account for this, green match detection takes priority over yellow and gray/black match detection. The first ```for i in range(5)``` loop only detects green matches, and counts letter guesses. The second ```for i in range(5)``` skips over green matches and modifies the board 
+
+
