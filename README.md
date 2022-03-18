@@ -23,23 +23,17 @@ _See documentation and Replit file below._
 
 Turtle and ANSI colors are saved as strings.
 
-```board``` is a two-dimensional list of tuples representing the boxes on the board.
-Each tuple contains the letter and the fill color for that box. _Example:_ ```("A", green)```.
-
-The default value for the tuples is ```("", white)```, meaning no letter has been guessed yet.
-
-The ```draw_box()``` function draws a box at ```x,y``` and fills it with current turtle fill color. It also writes ```text``` (a letter) in the center of the box. For clarity, filling in a box is the same thing as highlighting a letter.
+The ```draw_box()``` function draws a box at ```x,y```, and fills it with ```color```, and writes ```text``` (a letter) in the center of the box. For clarity, filling in a box is the same thing as highlighting a letter.
 
 
-The ```draw_board()``` function iterates through the tuples in ```board``` and draws the boxes in a grid format. It uses the tuples to get the right fill color and letter for the box.
-
+The ```draw_board()``` function uses nested-loops to draw the boxes in a grid format. It only draws the empty board (empty string text, white background).
 
 
 ### COLOR-CODING THE LETTERS IN A GUESS WORD
 The ```colorize()``` function determines the color of each box by looping through the letters in ```guess``` and comparing them to those in ```actual```.
-It directly modifies the tuples in ```board``` by changing their contained letters and colors.
+It then uses ```draw_box``` to fill in the letters with the proper highlighted color.
 
-```tries``` keeps track of how many guesses a user has made thus far. It is also used to determine which row in ```board``` the letters in ```guess``` will be placed in. _Example: If a user has made 2 guesses so far, row 2 will be filled in after the next guess is made._
+```tries``` keeps track of how many guesses a user has made thus far. It is also used to determine which row on the board (height on the screen) the letters in ```guess``` will be placed in. _Example: If a user has made two guesses so far, row two (counting from zero) will be filled in after the next guess is made._
 
 The algorithm to highlight letters is mostly trivial. Each letter in ```guess``` is compared to the corresponding letter from ```actual```. However, there are two edge cases involving duplicate letters that ```colorize()``` accounts for.
 
