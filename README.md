@@ -23,7 +23,7 @@ _See documentation and Replit file below._
 
 Turtle and ANSI colors are saved as strings.
 
-The ```draw_box()``` function draws a box at ```x,y```, and fills it with ```color```, and writes ```text``` (a letter) in the center of the box. For clarity, filling in a box is the same thing as highlighting a letter.
+The ```draw_box()``` function draws a box at ```x,y```, fills it with ```color```, and writes ```text``` (a letter) in the center of the box. For clarity, filling in a box is the same thing as highlighting a letter.
 
 
 The ```draw_board()``` function uses nested-loops to draw the boxes in a grid format. It only draws the empty board (empty string text, white background).
