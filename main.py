@@ -7,12 +7,10 @@ t.hideturtle()
 green = "#7aa86a" # letter is in right spot
 yellow = "#c6b567" # letter exists but is in wrong spot
 gray = "#787c7f" # letter does not exist in word
-red = '\u001b[31m' # error text
 reset = '\u001b[0m' # reset text color to default
 
 words = open('words.txt').read().split("\n")
 actual_word = random.choice(words).upper()
-
 guess_word = ""
 tries = 0
 
@@ -73,23 +71,20 @@ def colorize(guess, actual):
            
 #---------- GAME RUNS BELOW
 
-      
 draw_board()
 
 while True:
-  guess_word = input("GUESS A 5 LETTER WORD: ").upper()
+  guess_word = t.textinput("INPUT", "GUESS A 5 LETTER WORD: ").upper()
   
   if len(guess_word) != 5 or not guess_word.isalpha():
-    print(red + "INVALID INPUT" + reset)
     continue
     
   colorize(guess_word, actual_word)
   tries += 1
 
   if guess_word == actual_word:
-    print("YOU WIN!")
     break
     
   if tries == 6:
-    print("YOU LOST, THE WORD WAS: " + actual_word)
+    t.textinput("YOU LOSE!", "THE WORD WAS " + actual_word)
     break
