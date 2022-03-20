@@ -1,10 +1,11 @@
 # Wordle by Ty'rese H. — March 2022
 
-\[v1] Wordle game using console I/O only (not shown, needs fixing).
+\[v1\] Wordle game using console I/O only (not shown, needs fixing).
 
-\[v2.2] Wordle game using turtle input and Python turtle graphics.
-     * _added turtle.textinput(), removed console i/o_
-     * _removed 2d-list of tuples_
+\[v2.2\] Wordle game using turtle input and Python turtle graphics.
+* _added turtle.textinput(), removed console i/o_
+* _removed 2d-list of tuples_
+
 
 * Use the console to guess a five-letter word within six tries.
 * Gray/Black highlighting means that the letter is not in the word at all.
