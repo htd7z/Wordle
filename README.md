@@ -7,10 +7,11 @@
 * _removed 2d-list of tuples_
 
 
-* Use the console to guess a five-letter word within six tries.
-* Gray/Black highlighting means that the letter is not in the word at all.
-* Yellow highlighting means that the letter is in the word, but in the wrong spot.
-* Green highlighting means that the letter is in the word and is in the right spot.
+### GAME INSTRUCTIONS
+Use the console to guess a five-letter word within six tries.
+Gray/Black highlighting means that the letter is not in the word at all.
+Yellow highlighting means that the letter is in the word, but in the wrong spot.
+Green highlighting means that the letter is in the word and is in the right spot.
 
 _See documentation and Replit file below._
 
