@@ -43,7 +43,7 @@ The algorithm to highlight letters is mostly trivial. Each letter in ```guess```
 
 **(1) If a letter from ```guess``` is in ```actual``` but is in the wrong spot it would normally be highlighted in yellow. However, if the letter has been used in ```guess``` more times than it exists in ```actual```, it should be highlighted in gray/black. _Example: if the actual word is "TEASE" and the guessed word is "EREEN", there should only be two yellow "E"s, not three. The third "E" should be highlighted in gray/black (see screenshot below)_.**
 
-```lgc``` (letter guess counter) is a dictionary where each key is a letter in the actual word and its value is the number of times that letter has been guessed thus far. It is used to highlight a letter from ```guess``` in gray/black if it is used more times than it exists in ```actual```.
+To account for this, ```lgc``` (letter guess counter) is a dictionary where each key is a letter in the actual word and its value is the number of times that letter has been used in ```guess```. ```lgc[guess[i]] += 1``` increments the count for a given letter.
 
 
 **(2) If a letter from ```guess``` is in ```actual``` and is in the right spot it should be highlighted in green no matter what, even if it has been used too many times. _Example: if the actual word is "TEASE" and the guessed word is "EMCEE", there should only be one yellow "E", not two. The second "E" should be highlighted in gray/black. Though the last "E" is the third time that "E" is used, it should still be highlighted in green because it is in the right spot (see screenshot below)_.**
